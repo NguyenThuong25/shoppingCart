@@ -1,0 +1,25 @@
+<section class="container" *ngIf="isShow()">
+  <div class="promotion">
+    <label for="promo-code">Have A Promo Code?</label>
+    <input type="text" [(ngModel)]="promoCode" />
+    <button type="button" (click)="changeTotal()"></button>
+  </div>
+
+  <div class="summary">
+    <ul>
+      <li>
+        Subtotal <span>{{ subTotal | currency: "VND" }}</span>
+      </li>
+      <li>
+        Tax <span>{{ tax | currency: "VND" }}</span>
+      </li>
+      <li class="total">
+        Total <span>{{ total | currency: "VND" }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="checkout">
+    <button type="button">Check Out</button>
+  </div>
+</section>
